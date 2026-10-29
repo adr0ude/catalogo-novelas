@@ -2,10 +2,19 @@ type StatusNovela =
     | "assistido"
     | "nao assistido";
 
+type GeneroNovela =
+    | "drama"
+    | "comedia"
+    | "romance"
+    | "acao"
+    | "suspense"
+    | "fantasia"
+    | "historica";
+
 interface Novela {
     readonly id: number;
     nome: string;
-    genero: string;
+    genero: GeneroNovela;
     anoEstreia: number;
     duracao: number;
     sinopse: string;
@@ -18,7 +27,7 @@ let proximoIdNovela: number = 1;
 
 function cadastrarNovela(
     nome: string,
-    genero: string,
+    genero: GeneroNovela,
     anoEstreia: number,
     duracao: number,
     sinopse: string,
@@ -49,7 +58,7 @@ function cadastrarNovela(
 function atualizarNovela(
     id: number,
     nome: string,
-    genero: string,
+    genero: GeneroNovela,
     anoEstreia: number,
     duracao: number,
     sinopse: string,
@@ -97,4 +106,21 @@ function removerNovela(id: number): boolean {
     );
 
     return true;
+}
+
+function buscarNovelas(
+    nome: string,
+    genero: GeneroNovela | ""
+): Novela[] {
+
+    return novelas.filter((novela: Novela) => {
+        const correspondeNome = novela.nome
+            .toLowerCase()
+            .includes(nome.toLowerCase());
+
+        const correspondeGenero =
+            genero === "" || novela.genero === genero;
+
+        return correspondeNome && correspondeGenero;
+    });
 }

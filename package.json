@@ -1,0 +1,23 @@
+{
+  "name": "catalogo-novelas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adr0ude/catalogo-novelas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adr0ude/catalogo-novelas/issues"
+  },
+  "homepage": "https://github.com/adr0ude/catalogo-novelas#readme",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}

@@ -3,12 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Novelas</title>
+    <title>Novelário | Catálogo de Novelas</title>
 
     <script src="dist/app.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <header class="topbar">
+        <a class="logo" href="#">
+            <span class="logo-destaque">novel</span><span>ário</span>
+        </a>
+        <p>Suas histórias favoritas, reunidas em um só lugar.</p>
+    </header>
+
+    <main>
+        <section class="catalogo-section">
+            <p class="eyebrow">EXPLORE SUA COLEÇÃO</p>
+            <h1>Meu catálogo de novelas</h1>
+            <p class="intro">
+                Reúna suas novelas favoritas em um só lugar,
+                acompanhe o que já assistiu e descubra qual história
+                vem a seguir.
+            </p>
+
+            <div class="resumo-cards">
+                <div class="resumo-card">
+                    <div class="resumo-icon icon-total">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+                    </div>
+                    <div class="resumo-info">
+                        <span>Total de novelas</span>
+                        <strong id="total-novelas">0</strong>
+                    </div>
+                </div>
+
+                <div class="resumo-card">
+                    <div class="resumo-icon icon-assistidos">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div class="resumo-info">
+                        <span>Assistidas</span>
+                        <strong id="total-assistidas">0</strong>
+                    </div>
+                </div>
+
+                <div class="resumo-card">
+                    <div class="resumo-icon icon-pendentes">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div class="resumo-info">
+                        <span>Não assistidas</span>
+                        <strong id="total-pendentes">0</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tv">
+                <div class="tv-screen">
+
+                    <div class="filtros">
+                        <input
+                            type="search"
+                            id="busca"
+                            placeholder="Buscar novela..."
+                        >
+
+                        <select id="filtro-genero">
+                            <option value="">Todos os gêneros</option>
+                            <option value="drama">Drama</option>
+                            <option value="comedia">Comédia</option>
+                            <option value="romance">Romance</option>
+                            <option value="acao">Ação</option>
+                            <option value="suspense">Suspense</option>
+                            <option value="fantasia">Fantasia</option>
+                            <option value="historica">Histórica</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <p id="mensagem">Suas novelas aparecerão aqui.</p>
+
+                    <div id="catalogo" class="catalogo-cards">
+                    </div>
+
+                </div>
+
+                <div class="tv-luz"></div>
+                <div class="tv-base"></div>
+            </div>
+        </section>
+
+        <section class="cadastro-section">
+            <p class="eyebrow">SUA PRÓXIMA HISTÓRIA COMEÇA AQUI</p>
+            <h1>Registre suas novelas</h1>
+            <p class="intro">
+                Organize suas histórias favoritas e acompanhe o que já
+                assistiu.
+            </p>
+
+            <form id="form-novela">
+                <label for="nome">Nome da novela</label>
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Ex.: Avenida Brasil"
+                    required
+                >
+
+                <label for="genero">Gênero</label>
+                <select id="genero" name="genero" required>
+                    <option value="">Selecione um gênero</option>
+                    <option value="drama">Drama</option>
+                    <option value="comedia">Comédia</option>
+                    <option value="romance">Romance</option>
+                    <option value="acao">Ação</option>
+                    <option value="suspense">Suspense</option>
+                    <option value="fantasia">Fantasia</option>
+                    <option value="historica">Histórica</option>
+                    <option value="outro">Outro</option>
+                </select>
+
+                <label for="anoEstreia">Ano de estreia</label>
+                <input
+                    type="number"
+                    id="anoEstreia"
+                    name="anoEstreia"
+                    min="1900"
+                    required
+                >
+
+                <label for="duracao">Duração (episódios)</label>
+                <input
+                    type="number"
+                    id="duracao"
+                    name="duracao"
+                    min="1"
+                    placeholder="Ex.: 179"
+                    required
+                >
+
+                <label for="sinopse">Sinopse</label>
+                <textarea
+                    id="sinopse"
+                    name="sinopse"
+                    rows="4"
+                    placeholder="Conte um pouco sobre a novela..."
+                    required
+                ></textarea>
+
+                <label for="status">Status</label>
+                <select id="status" name="status" required>
+                    <option value="nao assistido">Não assistida</option>
+                    <option value="assistido">Assistida</option>
+                </select>
+
+                <button type="submit">Cadastrar novela</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Novelário · Seu catálogo de histórias.</p>
+        </div>
+    </footer>
 </body>
 </html>

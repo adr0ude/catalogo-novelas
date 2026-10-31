@@ -291,8 +291,8 @@ h1 {
 
 .catalogo-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
 }
 
 .novela {
@@ -388,7 +388,6 @@ h1 {
     background: #a8323b;
     color: white;
 }
-
 
 #form-novela {
     display: grid;

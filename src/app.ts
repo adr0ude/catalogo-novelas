@@ -1,4 +1,4 @@
-
+// Modelagem dos dados
 type StatusNovela =
     | "assistido"
     | "nao assistido";
@@ -28,6 +28,7 @@ const novelas: Novela[] = [];
 let proximoIdNovela: number = 1;
 let idEmEdicao: number | null = null;
 
+// Funcionalidades CRUD
 function cadastrarNovela(
     nome: string,
     genero: GeneroNovela,
@@ -118,6 +119,7 @@ const formulario = document.querySelector<HTMLFormElement>(
     "#form-novela"
 );
 
+// Renderização
 const campoNome = document.querySelector<HTMLInputElement>("#nome");
 const campoGenero = document.querySelector<HTMLSelectElement>("#genero");
 const campoAno = document.querySelector<HTMLInputElement>("#anoEstreia");

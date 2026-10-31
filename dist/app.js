@@ -2,6 +2,7 @@
 const novelas = [];
 let proximoIdNovela = 1;
 let idEmEdicao = null;
+// Funcionalidades CRUD
 function cadastrarNovela(nome, genero, anoEstreia, duracao, sinopse, status) {
     const novaNovela = {
         id: proximoIdNovela,
@@ -47,6 +48,7 @@ function buscarNovelas(nome, genero) {
     });
 }
 const formulario = document.querySelector("#form-novela");
+// Renderização
 const campoNome = document.querySelector("#nome");
 const campoGenero = document.querySelector("#genero");
 const campoAno = document.querySelector("#anoEstreia");

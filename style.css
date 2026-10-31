@@ -296,17 +296,6 @@ h1 {
 }
 
 .novela {
-    position: relative;
-    z-index: 1;
-    padding: 18px;
-    border: 1px solid var(--borda);
-    border-radius: 12px;
-    background: var(--superficie);
-    transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-
-.novela {
     display: flex;
     flex-direction: column;
     min-width: 0;
